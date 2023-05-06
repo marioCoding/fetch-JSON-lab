@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', initialize);
 
 async function initialize() {
-    let act = await fetch("http://www.boredapi.com/api/activity/");
+    let act = await fetch("http://www.boredapi.com/api/activity/")
     let activity = await act.json();
     try {
-        const activityElement = document.createElement("h2");
+        const activityElement = document.createElement("h3");
         activityElement.textContent = activity.activity;
         const typeElement = document.createElement("p");
         typeElement.textContent = activity.type;
@@ -21,4 +21,3 @@ async function initialize() {
         err => console.log("error", err.message);
     }
   };
-    //this only runs if there is an error during the above process
