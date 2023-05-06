@@ -1,17 +1,15 @@
 document.addEventListener('DOMContentLoaded', initialize);
 
 async function initialize() {
-    let act = await fetch("http://www.boredapi.com/api/activity/", {
-        mode: "no-cors",
-    })
+    let act = await fetch("http://www.boredapi.com/api/activity/")
     let activity = await act.json();
     try {
         const activityElement = document.createElement("h3");
-        activityElement.textContent = activity.activity;
+        activityElement.textContent = `${await activity.activity}`;
         const typeElement = document.createElement("p");
-        typeElement.textContent = activity.type;
+        typeElement.textContent = `${await activity.type}`;
         const participantElement = document.createElement("p");
-        participantElement.textContent = activity.participants;
+        participantElement.textContent = `${await activity.participants}`;
         //make a reference to the html container where
         //the info will be displayed.
         const container = document.querySelector("#container");
