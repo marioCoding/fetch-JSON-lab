@@ -18,6 +18,6 @@ async function initialize() {
         container.appendChild(typeElement);
         container.appendChild(participantElement);
     } catch {
-        err => console.log("error", err.message);
+        err => console.error("error", err.message);
     }
   };
