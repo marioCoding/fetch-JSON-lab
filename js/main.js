@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', initialize);
 
 async function initialize() {
-    let act = await fetch("http://www.boredapi.com/api/activity/")
+    let act = await fetch("http://www.boredapi.com/api/activity/", {
+        mode: "no-cors",
+    })
     let activity = await act.json();
     try {
         const activityElement = document.createElement("h3");
